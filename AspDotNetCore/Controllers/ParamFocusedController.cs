@@ -8,10 +8,20 @@ using System.Threading.Tasks;
 
 namespace AspDotNetCore.Controllers
 {
-    [Route("api/[controller]/[Action]")]
+    [Route("api/[controller]/[Action]")] // Setting route here, is like setting the Route-prefix
     [ApiController]
     public class ParamFocusedController : ControllerBase
     {
+        [Route("/Overridor")] // Overrides the prefix with '/'
+        [Route("~/TildaOverridor")] // You can also use "~/"
+        public IActionResult OverrideDefaultRoute()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Overrides the prefix with the char '/' at the START");
+            sb.AppendLine("you can also use \" ~/ \"");
+            return Ok(sb.ToString());
+        }
+
         public IActionResult NoParam()
         {
             StringBuilder sb = new StringBuilder();
@@ -32,6 +42,13 @@ namespace AspDotNetCore.Controllers
             sb.AppendLine($"Number = {n}");
             sb.AppendLine($"String = {s}");
             sb.AppendLine($"Boolean = {b}");
+            return Ok(sb.ToString());
+        }
+
+        [Route("{id}/{name}")]
+        public IActionResult RouteParams(int id, string name)
+        {
+            StringBuilder sb = new StringBuilder("If route params are set like this, then they must be inserted in!");
             return Ok(sb.ToString());
         }
     }
