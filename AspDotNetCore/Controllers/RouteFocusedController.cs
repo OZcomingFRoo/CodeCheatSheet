@@ -48,5 +48,34 @@ namespace AspDotNetCore.Controllers
             sb.AppendLine("public HttpGetAttribute(string template);");
             return Ok(sb.ToString());
         }
+
+        [HttpPost("TryToGetMeByPOST")]
+        public IActionResult RouteByPostAttr()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("This Route was created by using the [HttpPost] Attribute");
+            sb.AppendLine("The route was created the same way as the HttpGet Attribute");
+            sb.AppendLine("This means... that all Http methods have this C-tor feature");
+            return Ok(sb.ToString());
+        }
+
+        [HttpPut("PutTheRoutePath")]
+        public IActionResult RouteByHeadAttr()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("This Route was created by using the [HttpPut] Attribute");
+            sb.AppendLine("Yup, this settles it, all Http method Attributes have this c-tor feature");
+            return Ok(sb.ToString());
+        }
+
+        [Route("NoHttpMethodAttr")]
+        public IActionResult NoMethodAttrRoute()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("if no Http Method Attribute was set, then all Http methods are valid");
+            sb.AppendLine("as long as the route path is set.");
+            sb.AppendLine("Try to call it with the most un-common Http methods and see that it still being called.");
+            return Ok(sb.ToString());
+        }
     }
 }
