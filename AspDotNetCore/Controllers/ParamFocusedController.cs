@@ -51,5 +51,13 @@ namespace AspDotNetCore.Controllers
             StringBuilder sb = new StringBuilder("If route params are set like this, then they must be inserted in!");
             return Ok(sb.ToString());
         }
+
+        [Route("/api/BoolRouteParam/{boolean}")]
+        public IActionResult BoolRouteParam(bool boolean)
+        {
+            StringBuilder sb = new StringBuilder("Once again, boolean must be set via string of True and false");
+            sb.AppendLine("The string value is not case sensitive, e.g. \"fAlSe\". ");
+            return Ok(sb.ToString());
+        }
     }
 }
