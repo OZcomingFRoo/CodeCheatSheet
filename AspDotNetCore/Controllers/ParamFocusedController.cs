@@ -83,7 +83,7 @@ namespace AspDotNetCore.Controllers
             sb.AppendLine("If a property was not set then default value will be inserted.");
             sb.AppendLine("Result as Json:");
             sb.AppendLine(JsonConvert.SerializeObject(data, Formatting.Indented));
-            return Ok(sb);
+            return Ok(sb.ToString());
         }
     }
 }
