@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AspDotNetCore.Pocos;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace AspDotNetCore.Controllers
 {
@@ -77,6 +74,16 @@ namespace AspDotNetCore.Controllers
             return Ok(sb.ToString());
             // relevent link to this:
             // https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#optional-uri-parameters-and-default-values
+        }
+
+        public IActionResult SomeDataQuery([FromQuery] SomeData data)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Poco parameter was define like this : [FromQuery] SomeData data");
+            sb.AppendLine("If a property was not set then default value will be inserted.");
+            sb.AppendLine("Result as Json:");
+            sb.AppendLine(JsonConvert.SerializeObject(data, Formatting.Indented));
+            return Ok(sb);
         }
     }
 }
