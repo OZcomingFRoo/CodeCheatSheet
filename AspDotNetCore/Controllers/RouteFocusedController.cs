@@ -74,3 +74,4 @@ namespace AspDotNetCore.Controllers
         }
     }
 }
+// Useful link: https://joonasw.net/view/attribute-routing-cheat-sheet-for-aspnet-core
