@@ -48,7 +48,10 @@ namespace AspDotNetCore.Controllers
         [Route("{id}/{name}")]
         public IActionResult RouteParams(int id, string name)
         {
-            StringBuilder sb = new StringBuilder("If route params are set like this, then they must be inserted in!");
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("If route params are set like this, then they must be inserted in!");
+            sb.AppendLine($"1st route param, id = {id}");
+            sb.AppendLine($"2nd route param, name = {name}");
             return Ok(sb.ToString());
         }
 
@@ -58,6 +61,22 @@ namespace AspDotNetCore.Controllers
             StringBuilder sb = new StringBuilder("Once again, boolean must be set via string of True and false");
             sb.AppendLine("The string value is not case sensitive, e.g. \"fAlSe\". ");
             return Ok(sb.ToString());
+        }
+
+        [Route("{id?}/{name?}")]
+        public IActionResult DefaultRouteParams(int id = 100, string name = "Default String params")
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("We can define default values for route parameters by adding char '?' to the right side of the param");
+            sb.AppendLine("Here's how the route params were define: {id?}/{name?}");
+            sb.AppendLine("Note! if you define the param as optional, you must add the default value");
+            sb.AppendLine($"1st route param, id = {id}. " +
+                $"Is default ? {(id == 100).ToString()}");
+            sb.AppendLine($"2nd route param, name = \"{name}\". " +
+                $"Is default ? {(name == "Default String params").ToString()} ");
+            return Ok(sb.ToString());
+            // relevent link to this:
+            // https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#optional-uri-parameters-and-default-values
         }
     }
 }
