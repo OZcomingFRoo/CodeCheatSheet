@@ -35,5 +35,30 @@ namespace CommonCSharpUtils.MethodExtension
             return (thisDateTime > min && thisDateTime < max) || // Between the two DateTime objects
                    (includeEquals && (thisDateTime == dt1 || thisDateTime == dt2)); // equals to either one
         }
+
+        /// <summary>
+        /// Returns new DateTime object set in Jerusalem timezone. i.e. Israel time zone
+        /// </summary>
+        /// <param name="thisDateTime">The DateTime to convert</param>
+        /// <returns>The DateTime object set in Jerusalem timezone</returns>
+        public static DateTime ToIsraelDateTime(this DateTime thisDateTime)
+        {
+            // Used this answer to get Jerusalem timezone https://stackoverflow.com/a/6242206/11995160
+            // List of times zones you can find: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc749073(v=ws.10)?redirectedfrom=MSDN
+            var israelTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Israel Standard Time");
+            var israelDateTime = TimeZoneInfo.ConvertTimeFromUtc(thisDateTime.ToUniversalTime(), israelTimeZone);
+            return israelDateTime;
+        }
+
+        /// <summary>
+        /// Check if the given DateTime is set in Israel's weekend period of the week, i.e. the Jewish's weekend days
+        /// </summary>
+        /// <param name="thisDateTime">Can be any DateTime object. method pulls the date to Israel time zone and checks </param>
+        /// <returns>Checks if the given DateTime is set in either Friday or Saturday</returns>
+        public static bool IsIsraelWeekend(this DateTime thisDateTime)
+        {
+            var israelDateTime = thisDateTime.ToIsraelDateTime();
+            return israelDateTime.DayOfWeek == DayOfWeek.Friday || israelDateTime.DayOfWeek == DayOfWeek.Saturday;
+        }
     }
 }
