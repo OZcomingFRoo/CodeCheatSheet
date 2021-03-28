@@ -28,6 +28,19 @@ namespace AspDotNetCore.Controllers
             return Ok(sb.ToString());
         }
 
+        [HttpGet]
+        public IActionResult ObjInsideObj([FromQuery] ObjInsideObj data)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("This is much harder to inserting in URL as a query string value");
+            sb.AppendLine("The more the object data is complex, the harder it is to inserted in");
+            sb.AppendLine("This is why we usually us the POST method with a request body to go along with it");
+            sb.AppendLine("Result as Json:");
+            sb.AppendLine(JsonConvert.SerializeObject(data, Formatting.Indented));
+            return Ok(sb.ToString());
+        }
+
+
         [HttpPost]
         public IActionResult TypicalPost([FromBody] SomeData data)
         {
@@ -40,5 +53,6 @@ namespace AspDotNetCore.Controllers
             sb.AppendLine("It is very common to see an action defined with a POST method define to it");
             return Accepted(new SomeData { StrProp = sb.ToString(), NumProp = 1, BoolProp = true }); ;
         }
+
     }
 }
