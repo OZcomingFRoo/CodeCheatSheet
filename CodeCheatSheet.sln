@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetCore", "AspDotNetCore\AspDotNetCore.csproj", "{516B3509-8BAD-4344-96C4-4D646FA08EFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonCSharpUtils", "CommonCSharpUtils\CommonCSharpUtils.csproj", "{02927078-E2CF-4B3B-ADA7-48924EA29FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonCSharpUtils", "CommonCSharpUtils\CommonCSharpUtils.csproj", "{02927078-E2CF-4B3B-ADA7-48924EA29FB1}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Angular", "Angular\Angular.njsproj", "{7227225B-ACEF-4695-A25D-2D63B6240DB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{02927078-E2CF-4B3B-ADA7-48924EA29FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02927078-E2CF-4B3B-ADA7-48924EA29FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02927078-E2CF-4B3B-ADA7-48924EA29FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
