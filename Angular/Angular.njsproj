@@ -4,6 +4,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>Angular</Name>
     <RootNamespace>Angular</RootNamespace>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -21,7 +22,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>false</StartWebBrowser>
+    <StartWebBrowser>False</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +42,12 @@
     <Content Include="README.md" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.css" />
+    <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
+    <Content Include="src\app\components\nav\nav.component.css" />
+    <Content Include="src\app\components\nav\nav.component.html" />
+    <Content Include="src\app\components\utility\popup-window\popup-window.component.css" />
+    <Content Include="src\app\components\utility\popup-window\popup-window.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
@@ -55,6 +62,12 @@
     <Folder Include="e2e\src\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
+    <Folder Include="src\app\components\" />
+    <Folder Include="src\app\components\how-to\" />
+    <Folder Include="src\app\components\how-to\in-out-directive\" />
+    <Folder Include="src\app\components\nav\" />
+    <Folder Include="src\app\components\utility\" />
+    <Folder Include="src\app\components\utility\popup-window\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
   </ItemGroup>
@@ -65,6 +78,12 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
+    <TypeScriptCompile Include="src\app\components\nav\nav.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\nav\nav.component.ts" />
+    <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

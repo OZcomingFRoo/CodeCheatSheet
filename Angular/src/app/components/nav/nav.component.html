@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <!-- How to use Dropdown -->
+    <li class="nav-item dropdown" [class.show]="toggleHowToDropdown">
+      <a class="nav-link dropdown-toggle" (click)="toggleHowToDropdown = !toggleHowToDropdown">
+        How To Use
+      </a>
+      <div class="dropdown-menu" [class.show]="toggleHowToDropdown">
+        <a class="dropdown-item">Input-Output Directives</a>
+      </div>
+    </li>
+  </ul>
+</nav>
