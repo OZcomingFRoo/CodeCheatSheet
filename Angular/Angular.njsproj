@@ -46,9 +46,14 @@
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
     <Content Include="src\app\components\nav\nav.component.css" />
     <Content Include="src\app\components\nav\nav.component.html" />
+    <Content Include="src\app\components\utility\default-page\default-page.component.css" />
+    <Content Include="src\app\components\utility\default-page\default-page.component.html" />
     <Content Include="src\app\components\utility\popup-window\popup-window.component.css" />
     <Content Include="src\app\components\utility\popup-window\popup-window.component.html" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\bt4.png" />
+    <Content Include="src\assets\jasmineJS.png" />
+    <Content Include="src\assets\ng.png" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\styles.css" />
@@ -67,6 +72,7 @@
     <Folder Include="src\app\components\how-to\in-out-directive\" />
     <Folder Include="src\app\components\nav\" />
     <Folder Include="src\app\components\utility\" />
+    <Folder Include="src\app\components\utility\default-page\" />
     <Folder Include="src\app\components\utility\popup-window\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
@@ -82,6 +88,8 @@
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.ts" />
+    <TypeScriptCompile Include="src\app\components\utility\default-page\default-page.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\utility\default-page\default-page.component.ts" />
     <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />

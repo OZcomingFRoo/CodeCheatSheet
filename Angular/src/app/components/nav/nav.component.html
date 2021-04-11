@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">{{title}}</a>
+  <a class="navbar-brand" [routerLink]="['/Home']">{{title}}</a>
   <!-- Links -->
   <ul class="navbar-nav">
     <!-- How to use Dropdown -->
@@ -9,7 +9,7 @@
         How To Use
       </a>
       <div class="dropdown-menu" [class.show]="toggleHowToDropdown">
-        <a class="dropdown-item">Input-Output Directives</a>
+        <a class="dropdown-item" [routerLink]="['/HowTo/InputOutput']">Input-Output Directives</a>
       </div>
     </li>
   </ul>
