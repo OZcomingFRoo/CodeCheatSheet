@@ -97,6 +97,10 @@
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\KarmaJasmine\shallow-testing.spec.ts" />
+    <TypeScriptCompile Include="src\KarmaJasmine\skipping-certain-wierd-tests.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\KarmaJasmine\skipping-testing-spec-file.spec.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
