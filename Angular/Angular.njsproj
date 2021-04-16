@@ -56,6 +56,7 @@
     <Content Include="src\assets\ng.png" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
+    <Content Include="src\KarmaJasmine\Guide.md" />
     <Content Include="src\styles.css" />
     <Content Include="tsconfig.app.json" />
     <Content Include="tsconfig.json" />
@@ -76,6 +77,7 @@
     <Folder Include="src\app\components\utility\popup-window\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
+    <Folder Include="src\KarmaJasmine\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
@@ -94,6 +96,7 @@
     <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\KarmaJasmine\shallow-testing.spec.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
