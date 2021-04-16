@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'Angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular');
+    expect(app.title).toEqual('[ Angular - Code Cheat Sheet ]');
   });
 
-  it('should render title', () => {
+  it('Should not have span element inside a tag with class "content" ', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Angular app is running!');
+    expect(compiled.querySelector('.content span')).toBeNull();//.toContain('A  ngular app is running!');
   });
 });
