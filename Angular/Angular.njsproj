@@ -56,7 +56,7 @@
     <Content Include="src\assets\ng.png" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
-    <Content Include="src\KarmaJasmine\Guide.md" />
+    <Content Include="src\KarmaJasmine\README.md" />
     <Content Include="src\styles.css" />
     <Content Include="tsconfig.app.json" />
     <Content Include="tsconfig.json" />
