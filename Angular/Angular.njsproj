@@ -46,6 +46,10 @@
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
     <Content Include="src\app\components\nav\nav.component.css" />
     <Content Include="src\app\components\nav\nav.component.html" />
+    <Content Include="src\app\components\others\not-auth-page\not-auth-page.component.css" />
+    <Content Include="src\app\components\others\not-auth-page\not-auth-page.component.html" />
+    <Content Include="src\app\components\others\the-auth-page\the-auth-page.component.css" />
+    <Content Include="src\app\components\others\the-auth-page\the-auth-page.component.html" />
     <Content Include="src\app\components\utility\default-page\default-page.component.css" />
     <Content Include="src\app\components\utility\default-page\default-page.component.html" />
     <Content Include="src\app\components\utility\popup-window\popup-window.component.css" />
@@ -71,9 +75,13 @@
     <Folder Include="src\app\components\how-to\" />
     <Folder Include="src\app\components\how-to\in-out-directive\" />
     <Folder Include="src\app\components\nav\" />
+    <Folder Include="src\app\components\others\" />
+    <Folder Include="src\app\components\others\not-auth-page\" />
+    <Folder Include="src\app\components\others\the-auth-page\" />
     <Folder Include="src\app\components\utility\" />
     <Folder Include="src\app\components\utility\default-page\" />
     <Folder Include="src\app\components\utility\popup-window\" />
+    <Folder Include="src\app\Guards\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
   </ItemGroup>
@@ -88,10 +96,14 @@
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.ts" />
+    <TypeScriptCompile Include="src\app\components\others\not-auth-page\not-auth-page.component.ts" />
+    <TypeScriptCompile Include="src\app\components\others\the-auth-page\the-auth-page.component.ts" />
     <TypeScriptCompile Include="src\app\components\utility\default-page\default-page.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\utility\default-page\default-page.component.ts" />
     <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\utility\popup-window\popup-window.component.ts" />
+    <TypeScriptCompile Include="src\app\Guards\query-auth-equal-true-example.guard.spec.ts" />
+    <TypeScriptCompile Include="src\app\Guards\query-auth-equal-true-example.guard.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

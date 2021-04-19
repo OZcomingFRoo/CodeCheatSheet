@@ -7,6 +7,8 @@ import { InOutDirectiveComponent } from './components/how-to/in-out-directive/in
 import { PopupWindowComponent } from './components/utility/popup-window/popup-window.component';
 import { NavComponent } from './components/nav/nav.component';
 import { DefaultPageComponent } from './components/utility/default-page/default-page.component';
+import { TheAuthPageComponent } from './components/others/the-auth-page/the-auth-page.component';
+import { NotAuthPageComponent } from './components/others/not-auth-page/not-auth-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { DefaultPageComponent } from './components/utility/default-page/default-
     InOutDirectiveComponent,
     PopupWindowComponent,
     NavComponent,
-    DefaultPageComponent
+    DefaultPageComponent,
+    TheAuthPageComponent,
+    NotAuthPageComponent
   ],
   imports: [
     BrowserModule,
