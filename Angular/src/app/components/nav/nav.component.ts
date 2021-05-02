@@ -9,6 +9,7 @@ export class NavComponent implements OnInit {
 
   @Input() title = "Navigation Title";
   toggleHowToDropdown: boolean = false;
+  GuardsDropdown: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

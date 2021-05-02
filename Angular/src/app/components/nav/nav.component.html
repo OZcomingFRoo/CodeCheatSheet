@@ -9,7 +9,18 @@
         How To Use
       </a>
       <div class="dropdown-menu" [class.show]="toggleHowToDropdown">
-        <a class="dropdown-item" [routerLink]="['/HowTo/InputOutput']">Input-Output Directives</a>
+        <a class="dropdown-item" (click)="toggleHowToDropdown = false" [routerLink]="['/HowTo/InputOutput']">Input-Output Directives</a>
+      </div>
+    </li>
+    <!-- Guards related -->
+    <li class="nav-item dropdown" [class.show]="GuardsDropdown">
+      <a class="nav-link dropdown-toggle" (click)="GuardsDropdown = !GuardsDropdown">
+        Guards
+      </a>
+      <div class="dropdown-menu" [class.show]="GuardsDropdown">
+        <a class="dropdown-item" (click)="GuardsDropdown = false" 
+           [routerLink]="['AuthPage']" [queryParams]="{auth: 'true'}">Authorized Page</a>
+        <a class="dropdown-item" (click)="GuardsDropdown = false" [routerLink]="['NotAuth']">Un-Authorized Page</a>
       </div>
     </li>
   </ul>

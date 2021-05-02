@@ -1,0 +1,64 @@
+<header class="d-block w-100 mt-5 mt mb-5">
+  <h1 class="text-center mb-4">You've reach The Authorized Page</h1>
+  <h2 class="text-center">Congatulation</h2>
+</header>
+
+<hr class="m-auto w-90 border border-secondary" />
+
+<main class="d-block w-100 mt-5">
+  <div class="d-flex flex-wrap justify-content-around">
+    <div class="card w-30" style="height:200px">
+      <div class="card-header">
+        <h3>Note!</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          Try changing the query string value <code>"Auth"</code> to something else than <code>"true"</code>
+          and see what happens
+        </p>
+      </div>
+    </div>
+    <div class="card w-30">
+      <div class="card-header">
+        <h3>How, what why</h3>
+      </div>
+      <div class="card-body">
+        <p>
+          Guards are meant to prevent from user from casually nagivating in the SPA application.
+          It is commonly used for:
+        </p>
+        <ul class="list-group mb-5">
+          <li class="list-group-item">Limiting access to a page for admin/users only</li>
+          <li class="list-group-item">Prevent users from leaving an unsaved form</li>
+        </ul>
+        <p>
+          You can do all that and much more by implamenting one of the life cycle hooks during routing.
+          The available hooks are:
+        </p>
+        <ul class="list-group">
+          <li class="list-group-item">CanActivate</li>
+          <li class="list-group-item">CanActivateChild</li>
+          <li class="list-group-item">CanDeactivate</li>
+          <li class="list-group-item">Resolve</li>
+          <li class="list-group-item">CanLoad</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card w-30" style="height:200px">
+      <div class="card-header">
+        <h3>Links on how to use</h3>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="https://angular.io/guide/router#preventing-unauthorized-access">Angular Official Doc</a>
+          </li>
+          <li class="list-group-item">
+            <a target="_blank" href="https://stackoverflow.com/a/66596394">Working Async solution (Stack<b>overflow</b>)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
