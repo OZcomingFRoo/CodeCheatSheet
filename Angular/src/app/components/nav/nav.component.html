@@ -18,10 +18,23 @@
         Guards
       </a>
       <div class="dropdown-menu" [class.show]="GuardsDropdown">
-        <a class="dropdown-item" (click)="GuardsDropdown = false" 
+        <a class="dropdown-item" (click)="GuardsDropdown = false"
            [routerLink]="['AuthPage']" [queryParams]="{auth: 'true'}">Authorized Page</a>
         <a class="dropdown-item" (click)="GuardsDropdown = false" [routerLink]="['NotAuth']">Un-Authorized Page</a>
       </div>
     </li>
+    <!-- How to use Dropdown -->
+    <li class="nav-item dropdown" [class.show]="PopupModelsDropdown">
+      <a class="nav-link dropdown-toggle" (click)="PopupModelsDropdown = !PopupModelsDropdown">
+        Popup Model Windows
+      </a>
+      <div class="dropdown-menu" [class.show]="PopupModelsDropdown">
+        <a class="dropdown-item" (click)="clickShowNativePopup()">Native popup model</a>
+        <a class="dropdown-item" (click)="PopupModelsDropdown = false">Bootsrap based popup model</a>
+      </div>
+    </li>
   </ul>
 </nav>
+<app-popup-window [(show)]="showNativePopup" [width]="80" [height]="80">
+  <h1>The ace of .....</h1>
+</app-popup-window>

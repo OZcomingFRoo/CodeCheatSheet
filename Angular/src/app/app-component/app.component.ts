@@ -1,5 +1,9 @@
 import { Component , OnInit } from '@angular/core';
 
+/**
+ * - Consider this the starting point of the Angular Application
+ * - This component is always
+ * */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
