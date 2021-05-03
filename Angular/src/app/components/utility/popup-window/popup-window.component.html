@@ -2,6 +2,7 @@
 <div class="popup-window" [class.show-modal]="show">
   <div class="popup-content" [ngStyle]="contentStyle">
     <div class="ruler-window">
+      <span class="ruler-window-title">{{ title }}</span>
       <span class="ruler-window-close-btn" (click)="closeWindow()">&times;</span>
     </div>
     <ng-content></ng-content>

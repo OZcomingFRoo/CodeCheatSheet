@@ -31,7 +31,7 @@
 .ruler-window {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   background-color: black;
 }
@@ -48,3 +48,11 @@
   .ruler-window-close-btn:hover {
     background-color: red;
   }
+
+.ruler-window-title {
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1em;
+  margin-right: 1em;
+}

@@ -26,6 +26,8 @@ export class PopupWindowComponent implements OnInit {
   @Input() width: number = 60;
   /** Width in percent (Relative to screen) */
   @Input() height: number = 50;
+  /** Optional parameter to add a title to the window ruler */
+  @Input() title: string = "";
 
   
 
