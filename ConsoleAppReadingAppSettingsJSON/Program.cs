@@ -17,7 +17,8 @@ namespace ConsoleApplication
             ConfigurationBinder.Bind(configuration.GetSection("AppSettings"), appSettings);
 
             // ------------- The rest of your program here ------------- //
-            // ToDo: how to read from Sub-classes of configuration file
+            // ToDo: how to read from Sub-classes of configuration file?
+            // Raise a question on GitHub + Stack-overflow
             Console.WriteLine("InMemory = " + appSettings.InMemory);
             Console.WriteLine("IsProduction = " + appSettings.IsProduction);
             Console.WriteLine("Title = " + appSettings.Title);
