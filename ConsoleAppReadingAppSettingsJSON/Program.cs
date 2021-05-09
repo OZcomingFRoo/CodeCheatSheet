@@ -17,11 +17,12 @@ namespace ConsoleApplication
             ConfigurationBinder.Bind(configuration.GetSection("AppSettings"), appSettings);
 
             // ------------- The rest of your program here ------------- //
-            // ToDo: how to read from Sub-classes of configuration file?
-            // Raise a question on GitHub + Stack-overflow
             Console.WriteLine("InMemory = " + appSettings.InMemory);
             Console.WriteLine("IsProduction = " + appSettings.IsProduction);
             Console.WriteLine("Title = " + appSettings.Title);
+            Console.WriteLine("Some Number = " + appSettings.SumNumber);
+            Console.WriteLine("Sub prop object -> Name = " + appSettings.Arthor.Name);
+            Console.WriteLine("Sub prop object -> SumNumber = " + appSettings.Arthor.SumNumber);
         }
     }
 }
