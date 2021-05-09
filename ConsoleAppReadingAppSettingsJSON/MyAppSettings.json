@@ -4,7 +4,7 @@
     "IsProduction": false,
     "Title": "My development title",
     "SumNumber": 1337,
-    "Arthor": {
+    "PropObject": {
       "Name": "Inochi Okami",
       "SumNumber": 26
     }

@@ -21,8 +21,8 @@ namespace ConsoleApplication
             Console.WriteLine("IsProduction = " + appSettings.IsProduction);
             Console.WriteLine("Title = " + appSettings.Title);
             Console.WriteLine("Some Number = " + appSettings.SumNumber);
-            Console.WriteLine("Sub prop object -> Name = " + appSettings.Arthor.Name);
-            Console.WriteLine("Sub prop object -> SumNumber = " + appSettings.Arthor.SumNumber);
+            Console.WriteLine("Sub prop object -> Name = " + appSettings.PropObject.Name);
+            Console.WriteLine("Sub prop object -> SumNumber = " + appSettings.PropObject.SumNumber);
         }
     }
 }

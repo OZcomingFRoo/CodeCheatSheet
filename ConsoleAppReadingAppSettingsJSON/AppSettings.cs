@@ -6,9 +6,9 @@
         public bool IsProduction { get; set; }
         public string Title { get; set; }
         public int SumNumber { get; set; }
-        public Arthor Arthor { get; set; }
+        public SubClassSettings PropObject { get; set; }
     }
-    public class Arthor
+    public class SubClassSettings
     {
         public string Name { get; set; }
         public int SumNumber { get; set; }
