@@ -1,7 +1,6 @@
-﻿// ================================================================================ //
-// This is used to demonstrate how the ViewImports work when using namespaces to give 
-// In
-// ================================================================================ //
+﻿// ==================================================== //
+// This is used to demonstrate how the ViewImports work //
+// ==================================================== //
 
 
 namespace SomeRootViewImportObject
