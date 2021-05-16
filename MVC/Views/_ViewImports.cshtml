@@ -1,3 +1,15 @@
-﻿@using MVC
+﻿@*
+    - If set on the "Views", then all views will know about the classes these namespaces contain
+    - Used purely to add all the "using" of classes and methods (e.g. TagHelper)
+    - You cannot render Html Here or run some code before the View is rendered
+      That's a job for the _ViewStart.cshtml to do.
+*@
+@{ 
+    var _ = "Root _ViewImports.cshtml will run 1st (before Root _ViewStart.cshtml)";
+    // The Import views cannot be debugged, since it doesn't run any code here.
+    // To run code before the View is rendered, use the _ViewStart.cshtml to do so
+}
+@using MVC
 @using MVC.Models
+@using SomeRootViewImportObject
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
