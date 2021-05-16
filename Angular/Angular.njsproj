@@ -114,7 +114,6 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\KarmaJasmine\skipping-testing-spec-file.spec.ts" />
-    <TypeScriptCompile Include="src\KarmaJasmine\to-equal-VS-to-be.spec.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
