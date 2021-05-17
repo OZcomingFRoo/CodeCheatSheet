@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <h1>The Alt Layout Header !</h1>
+    <header class="p-3">
+        <h1 class="text-center text-danger">The Alt Layout Header !</h1>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <footer>
-        <h2>The Alt Layout Footer</h2>
+    <footer class="mb-3 position-fixed fixed-bottom">
+        <h2 class="text-center text-danger">The Alt Layout Footer</h2>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
