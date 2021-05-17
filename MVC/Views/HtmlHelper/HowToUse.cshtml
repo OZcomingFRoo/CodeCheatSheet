@@ -53,4 +53,13 @@
         <h2>DropdownList (From An IEnumerable object)</h2>
         @Html.DropDownList("name-and-id-value", new SelectList(dropdownListItems, "Item1", "Item2", 73), new { @class = "w-75 text-danger" })
     </li>
+    <li class="w-100">
+        <h2>Hidden field for the model</h2>
+        @Html.HiddenFor(m => m.DecimalNumber)
+    </li>
+    <li class="w-100">
+        <h2>Hidden field From Server</h2>
+        @* Can be a local variable as well *@
+        @Html.Hidden("hidden-field", "Some random hidden value XD = " + (Model.Number * Model.AltDecimalNum))
+    </li>
 </ul>

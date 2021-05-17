@@ -17,7 +17,7 @@ namespace MVC.Models
         public bool Boolean { get; set; } = true;
         public char Character { get; set; } = 'C';
         public DateTime DateAndTime { get; set; } = DateTime.Now;
-        public short[] NumArr { get; set; } = new short[0];
+        public char[] NumArr { get; set; } = "Character Array".ToCharArray();
         public HowToUseProp ObjectProp { get; set; } = new HowToUseProp();
     }
     public class HowToUseProp
