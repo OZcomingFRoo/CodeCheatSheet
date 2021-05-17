@@ -10,13 +10,47 @@
 
 @{
     ViewData["Title"] = "How to use HtmlHelper";
+    List<Tuple<int, string>> dropdownListItems = new List<Tuple<int, string>>();
+    dropdownListItems.Add(new Tuple<int, string>(6, "Halo 3"));
+    dropdownListItems.Add(new Tuple<int, string>(8, "Gears of War 2"));
+    dropdownListItems.Add(new Tuple<int, string>(10, "Ratchet and Clank 4"));
+    dropdownListItems.Add(new Tuple<int, string>(11, "The Last of Us 1"));
+    dropdownListItems.Add(new Tuple<int, string>(73, "Melty Blood: Actress Again HD"));
+    dropdownListItems.Add(new Tuple<int, string>(222, "Tekken Tag Tournament 2"));
 }
 
 <h1 class="m-4 text-center">How to use HtmlHelper</h1>
 
 <ul class="w-100">
     <li class="w-100">
-        <h2>Regular element</h2>
-
+        <h2>Text Input</h2>
+        @Html.TextBoxFor(m => m.ObjectProp.Name, "The text is \"{0}\"", new { id = "My-textbox-Id", @class = "w-100" })
+    </li>
+    <li class="w-100">
+        <h2>Text Area</h2>
+        @Html.TextAreaFor(m => m.Sentence, 5, 3, new { id = "My-textboxArea-Id", @class = "w-100" })
+    </li>
+    <li class="w-100">
+        <h2>Checkbox</h2>
+        @Html.CheckBoxFor(m => m.Boolean, new { id = "My-Checkbox-Id", style = "transform: scale(2);" })
+    </li>
+    <li class="w-100">
+        <h2>Radio button</h2>
+        Male
+        @Html.RadioButtonFor(m => m.ObjectProp.Gender, "Male")
+        Female
+        @Html.RadioButtonFor(m => m.ObjectProp.Gender, "Female")
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (Just the Enum)</h2>
+        @Html.DropDownList("enum-name-and-id-value", Html.GetEnumSelectList(typeof(Gender)), new { @class = "w-25 text-warning" })
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (Enum for model)</h2>
+        @Html.DropDownListFor(m => m.ObjectProp.Gender, Html.GetEnumSelectList(typeof(Gender)), "Select Gender", new { @class = "w-50 text-primary" })
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (From An IEnumerable object)</h2>
+        @Html.DropDownList("name-and-id-value", new SelectList(dropdownListItems, "Item1", "Item2", 73), new { @class = "w-75 text-danger" })
     </li>
 </ul>

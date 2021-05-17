@@ -23,8 +23,8 @@ namespace MVC.Models
     public class HowToUseProp
     {
         public int Age { get; set; } = 26;
-        public string Name { get; set; } = "Ookami";
-        public Gender Gender { get; set; } = Gender.Male;
+        public string Name { get; set; } = "Kunimitsu";
+        public Gender Gender { get; set; } = Gender.Female;
 
     }
     public enum Gender 
