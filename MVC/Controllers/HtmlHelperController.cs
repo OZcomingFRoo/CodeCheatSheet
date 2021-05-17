@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,10 @@ namespace MVC.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult HowToUse()
+        {
+            return View(new HowToUseModel());
         }
     }
 }
