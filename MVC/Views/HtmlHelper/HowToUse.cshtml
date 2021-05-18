@@ -58,8 +58,30 @@
         @Html.HiddenFor(m => m.DecimalNumber)
     </li>
     <li class="w-100">
-        <h2>Hidden field From Server</h2>
+        <h2>Hidden field From User</h2>
         @* Can be a local variable as well *@
         @Html.Hidden("hidden-field", "Some random hidden value XD = " + (Model.Number * Model.AltDecimalNum))
     </li>
+    <li class="w-100">
+        <h2>Using the display method </h2>
+        <p>Renders the name value of the <code>Display</code> Attribute</p>
+        @Html.DisplayNameFor(m => m.Sentence)
+    </li>
+    <li class="w-100">
+        <h2>What does DisplayModel do ?</h2>
+        <code>@Html.DisplayForModel()</code>
+        Seems Like it displays each value with it's optionally created label display.
+    </li>
+    <li class="w-100">
+        <h2>Using Editors</h2>
+        <p>Used for <i>Generate HTML input elements based on the datatype.</i></p>
+        <code>
+            @Html.EditorForModel()
+        </code>
+        <pre>
+            I used <code>EditorForModel</code> shortcut to generate all the Editors for any possible value.
+            Not all values were rendered properly which is why ASP.NET MVC gives options to render the inputs in multiple ways.
+        </pre>
+    </li>
 </ul>
+
