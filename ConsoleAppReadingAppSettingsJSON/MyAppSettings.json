@@ -1,0 +1,12 @@
+{
+  "AppSettings": {
+    "InMemory": true,
+    "IsProduction": false,
+    "Title": "My development title",
+    "SumNumber": 1337,
+    "PropObject": {
+      "Name": "Inochi Okami",
+      "SumNumber": 26
+    }
+  }
+}

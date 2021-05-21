@@ -40,8 +40,8 @@
     <Content Include="karma.conf.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\app\app.component.css" />
-    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\app-component\app.component.css" />
+    <Content Include="src\app\app-component\app.component.html" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.css" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
     <Content Include="src\app\components\nav\nav.component.css" />
@@ -60,6 +60,7 @@
     <Content Include="src\assets\ng.png" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
+    <Content Include="src\KarmaJasmine\README.md" />
     <Content Include="src\styles.css" />
     <Content Include="tsconfig.app.json" />
     <Content Include="tsconfig.json" />
@@ -82,15 +83,17 @@
     <Folder Include="src\app\components\utility\default-page\" />
     <Folder Include="src\app\components\utility\popup-window\" />
     <Folder Include="src\app\Guards\" />
+    <Folder Include="src\app\app-component\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\environments\" />
+    <Folder Include="src\KarmaJasmine\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
     <TypeScriptCompile Include="e2e\src\app.po.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app-component\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app-component\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
@@ -106,6 +109,11 @@
     <TypeScriptCompile Include="src\app\Guards\query-auth-equal-true-example.guard.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\KarmaJasmine\shallow-testing.spec.ts" />
+    <TypeScriptCompile Include="src\KarmaJasmine\skipping-certain-wierd-tests.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\KarmaJasmine\skipping-testing-spec-file.spec.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />

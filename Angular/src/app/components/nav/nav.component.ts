@@ -10,9 +10,16 @@ export class NavComponent implements OnInit {
   @Input() title = "Navigation Title";
   toggleHowToDropdown: boolean = false;
   GuardsDropdown: boolean = false;
+  PopupModelsDropdown: boolean = false;
+  showNativePopup = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clickShowNativePopup() {
+    this.PopupModelsDropdown = false;
+    this.showNativePopup = true;
   }
 
 }

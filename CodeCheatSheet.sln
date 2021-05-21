@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonCSharpUtils", "Common
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Angular", "Angular\Angular.njsproj", "{7227225B-ACEF-4695-A25D-2D63B6240DB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppReadingAppSettingsJSON", "ConsoleAppReadingAppSettingsJSON\ConsoleAppReadingAppSettingsJSON.csproj", "{00769B0E-8BCC-44F5-8BC0-9C627914A29E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7227225B-ACEF-4695-A25D-2D63B6240DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00769B0E-8BCC-44F5-8BC0-9C627914A29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00769B0E-8BCC-44F5-8BC0-9C627914A29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00769B0E-8BCC-44F5-8BC0-9C627914A29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00769B0E-8BCC-44F5-8BC0-9C627914A29E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
