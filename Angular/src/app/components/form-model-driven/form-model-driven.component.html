@@ -4,17 +4,27 @@
     <div class="form-group w-70">
       <label>First Name:</label>
       <input type="text" class="form-control" [formControl]="firstName">
-      <p [class.d-none]="! firstName.errors?.required"  [ngClass]="{ 'text-danger d-block' : firstName.errors?.required}">Value Required</p>
+      <!-- Using Built In Validators -->
+      <p [class.d-none]="! firstName.errors?.required" [ngClass]="{ 'text-danger d-block' : firstName.errors?.required}">Value Required</p>
       <p [class.d-none]="! firstName.errors?.minlength" [ngClass]="{ 'text-danger d-block' : firstName.errors?.minlength}">
         Buddy, no one has a 'latter' as his name, Unless you're Japanese or something
+      </p>
+      <!-- Using Custom Validator -->
+      <p [class.d-none]="! firstName.errors?.NoBob" [ngClass]="{ 'text-danger d-block' : firstName.errors?.NoBob}">
+        Lame name..... Bob... Really ?!??
       </p>
     </div>
     <div class="form-group w-70">
       <label>Last Name:</label>
       <input type="text" class="form-control" [formControl]="lastName">
+      <!-- Using Built In Validators -->
       <p [class.d-none]="! lastName.errors?.required" [ngClass]="{ 'text-danger d-block' : lastName.errors?.required}">Value Required</p>
       <p [class.d-none]="! lastName.errors?.minlength" [ngClass]="{ 'text-danger d-block' : lastName.errors?.minlength}">
         Buddy, no one has a 'latter' as his name, Unless you're Japanese or something
+      </p>
+      <!-- Using Custom Validator (Inline) -->
+      <p [class.d-none]="! lastName.errors?.NoBob" [ngClass]="{ 'text-danger d-block' : lastName.errors?.NoBob}">
+        Lame name..... Bob... Really ?!??
       </p>
     </div>
     <h4>Full Name (Using the <code>Value</code> property):</h4>
