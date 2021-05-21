@@ -23,11 +23,6 @@ export class FormModelDrivenComponent implements OnInit {
     let carDate = new Date(2016, 1, 5);
     this.myFormGroup.addControl("manufactureDate", new FormControl(formatDate(carDate, 'yyyy-MM-dd', 'en')));
     this.myFormGroup.addControl("is2ndHanded", new FormControl(false));
-
-    // Adding values to FormArray in runtime
-    this.myFormArr.push(new FormControl('日本語', Validators.required));
-    this.myFormArr.push(new FormControl('Hebrew', Validators.required));
-    this.myFormArr.push(new FormControl('English', Validators.required));    
   }
 
 
@@ -84,17 +79,20 @@ export class FormModelDrivenComponent implements OnInit {
   }
 
   // Represents the Languages I learned so far
-  myFormArr: FormArray = this._formBuilder.array([
-    this._formBuilder.control('C#', Validators.required),
-    ['JavaScript', Validators.required],
-    ['TypeScript', Validators.required],
-    ['PHP', Validators.required],
-    ['SQL', Validators.required],
-  ]);
+  myFormArrGroup: FormGroup = this._formBuilder.group({ arr: this._formBuilder.array([]) });
+  public get myFormArray(): FormArray { return this.myFormArrGroup.get("arr") as FormArray; }
   public addControlToArr() {
-    this.myFormArr.push(new FormControl('None', Validators.required));
+    this.myFormArray.push(new FormControl('None', Validators.required));
   }
   public removeControlFromArr(controlIndex: number) {
-    this.myFormArr.removeAt(controlIndex);
+    this.myFormArray.removeAt(controlIndex);
+  }
+  public updateYourAss(index: number, value: string) {
+
+  }
+  public submitArr() {
+    for (let i = 0; i < this.myFormArray.length; i++) {
+      console.log(this.myFormArray.at(i).value);
+    }
   }
 }
