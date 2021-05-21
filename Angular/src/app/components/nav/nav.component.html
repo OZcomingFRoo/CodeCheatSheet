@@ -33,8 +33,23 @@
         <a class="dropdown-item" (click)="PopupModelsDropdown = false">Bootsrap based popup model</a>
       </div>
     </li>
+    <!-- How to use Forms -->
+    <li class="nav-item dropdown" [class.show]="AngularFormsDropdown">
+      <a class="nav-link dropdown-toggle" (click)="AngularFormsDropdown = !AngularFormsDropdown">
+        NgForms
+      </a>
+      <div class="dropdown-menu" [class.show]="AngularFormsDropdown">
+        <a class="dropdown-item" (click)="AngularFormsDropdown = false" [routerLink]="['ReactiveForm']">Reactive Form</a>
+        <a class="dropdown-item" (click)="AngularFormsDropdown = false" [routerLink]="['TemplateDrivenForm']">Template-Driven Form</a>
+      </div>
+    </li>
   </ul>
 </nav>
+<!-- Native popup model -->
 <app-popup-window [(show)]="showNativePopup" [width]="80" [height]="80">
-  <h1>The ace of .....</h1>
+  <div class="p-3">
+    <h1 class="text-center">You "navigated" to the popup "page"...</h1>
+    <p class="text-center">Well, it's not acutall a page, but you know</p>
+  </div>
 </app-popup-window>
+<!-- Bootstrap's popup model Todo -->

@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
   GuardsDropdown: boolean = false;
   PopupModelsDropdown: boolean = false;
   showNativePopup = false;
+  AngularFormsDropdown: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
