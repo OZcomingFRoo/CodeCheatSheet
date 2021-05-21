@@ -2,7 +2,7 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup, FormControl, ValidatorFn, Validators,
-  AbstractControl, ValidationErrors, FormBuilder
+  AbstractControl, ValidationErrors, FormBuilder, FormArray
 } from '@angular/forms';
 
 @Component({
@@ -15,16 +15,21 @@ export class FormModelDrivenComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    
+
     this.firstName.valueChanges.subscribe(this.printValueInConsole,); // Getting value via Observable
     this.lastName.valueChanges.subscribe(this.printValueInConsole); // Getting value via Observable
 
-    // Add control to FormGroup
+    // Adding values to FormGroup in runtime
     let carDate = new Date(2016, 1, 5);
-    // Adding values in runtime
     this.myFormGroup.addControl("manufactureDate", new FormControl(formatDate(carDate, 'yyyy-MM-dd', 'en')));
     this.myFormGroup.addControl("is2ndHanded", new FormControl(false));
+
+    // Adding values to FormArray in runtime
+    this.myFormArr.push(new FormControl('日本語', Validators.required));
+    this.myFormArr.push(new FormControl('Hebrew', Validators.required));
+    this.myFormArr.push(new FormControl('English', Validators.required));    
   }
+
 
   public firstName: FormControl = new FormControl('Inochi',
     [
@@ -63,7 +68,7 @@ export class FormModelDrivenComponent implements OnInit {
   // Comparison on how to init a FormGroup object:
   // https://angular.io/guide/reactive-forms#using-the-formbuilder-service-to-generate-controls
   // ======== Setting FormGroup via builder (Much short) ======== //
-  myFormGroup: FormGroup = this._formBuilder.group({ 
+  myFormGroup: FormGroup = this._formBuilder.group({
     carName: ["Subaru", Validators.required],
     color: [3]
   });
@@ -76,5 +81,20 @@ export class FormModelDrivenComponent implements OnInit {
     console.info("Looks like you submitted the groups form");
     console.info("Is it valid ? ", this.myFormGroup.valid);
     console.info("Value ", this.myFormGroup.value);
+  }
+
+  // Represents the Languages I learned so far
+  myFormArr: FormArray = this._formBuilder.array([
+    this._formBuilder.control('C#', Validators.required),
+    ['JavaScript', Validators.required],
+    ['TypeScript', Validators.required],
+    ['PHP', Validators.required],
+    ['SQL', Validators.required],
+  ]);
+  public addControlToArr() {
+    this.myFormArr.push(new FormControl('None', Validators.required));
+  }
+  public removeControlFromArr(controlIndex: number) {
+    this.myFormArr.removeAt(controlIndex);
   }
 }
