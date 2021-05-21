@@ -13,7 +13,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PopupWindowComponent implements OnInit {
 
-  @Input() show: boolean = true;
+  @Input() show: boolean = false;
   // notice that the name starts as the "show" prop with the suffix "Change"
   // With this, we can do a "2-way-binding" to the "show" property
   // Look at angular source: https://angular.io/guide/two-way-binding#how-two-way-binding-works
