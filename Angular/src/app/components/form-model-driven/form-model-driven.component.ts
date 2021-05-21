@@ -1,6 +1,9 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, ValidatorFn, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import {
+  FormGroup, FormControl, ValidatorFn, Validators,
+  AbstractControl, ValidationErrors, FormBuilder
+} from '@angular/forms';
 
 @Component({
   selector: 'app-form-model-driven',
@@ -9,15 +12,16 @@ import { FormGroup, FormControl, ValidatorFn, Validators, AbstractControl, Valid
 })
 export class FormModelDrivenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    
     this.firstName.valueChanges.subscribe(this.printValueInConsole,); // Getting value via Observable
     this.lastName.valueChanges.subscribe(this.printValueInConsole); // Getting value via Observable
 
     // Add control to FormGroup
     let carDate = new Date(2016, 1, 5);
-    // Adding values 
+    // Adding values in runtime
     this.myFormGroup.addControl("manufactureDate", new FormControl(formatDate(carDate, 'yyyy-MM-dd', 'en')));
     this.myFormGroup.addControl("is2ndHanded", new FormControl(false));
   }
@@ -55,11 +59,19 @@ export class FormModelDrivenComponent implements OnInit {
     }
   };
 
-  public myFormGroup: FormGroup = new FormGroup({
-    // Adding formControls directly
-    carName: new FormControl("Subaru", Validators.required),
-    color: new FormControl(3)
+
+  // Comparison on how to init a FormGroup object:
+  // https://angular.io/guide/reactive-forms#using-the-formbuilder-service-to-generate-controls
+  // ======== Setting FormGroup via builder (Much short) ======== //
+  myFormGroup: FormGroup = this._formBuilder.group({ 
+    carName: ["Subaru", Validators.required],
+    color: [3]
   });
+  // ======== Setting FormGroup via Setting FormGroup via C-TOR ======== //
+  // myFormGroup = new FormGroup({
+  //  carName: new FormControl("Subaru", Validators.required),
+  //  color: new FormControl(3)
+  //});
   public submitGroup(): void {
     console.info("Looks like you submitted the groups form");
     console.info("Is it valid ? ", this.myFormGroup.valid);
