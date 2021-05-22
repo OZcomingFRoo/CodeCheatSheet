@@ -88,6 +88,15 @@
   <div class="mt-3 border p-4 mt-2 mb-2 d-block">
     <form [formGroup]="myFormArrGroup" (ngSubmit)="submitArr()">
       <h2>Using Form-Array (Languages are know)</h2>
+      <h3 class="text-danger">Note ! Please read this to avoid confusion</h3>
+      <p>To add FormArray, the Form array must:</p>
+      <ol class="list-group w-75 m-auto">
+        <li>Be inside a form group</li>
+        <li>
+          Must have a getter property that reference the Array.<br />
+          <b>THE GETTER PROP MUST HAVE THE SAME NAME AS THE KEY/PROP TO ACCESS THE FormArray INSIDE THE FormGroup</b>
+        </li>
+      </ol>
       <div formArrayName="formArr">
         <button class="btn-warning btn" (click)="addControlToArr()">Add</button>
         <div class="w-100" *ngFor="let lang of formArr.controls; let i=index">
