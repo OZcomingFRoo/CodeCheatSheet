@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "../Shared/_AltLayout.cshtml";
+    ViewData["Title"] = "Alternative Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @ViewData["Title"]</h1>
+    <h2>How to use Layout</h2>
+    <p>The Alt index set's his own Layout page, you can do the same _ViewStart.cshtml .</p>
+    <p>Layout main job is to take care of where the sections will be rendered</p>
+    <br />
+    <p><code>RenderSection</code> Will render anything inside a section of the layout</p>
+    <p>To do that, call @@section [name of section] and wrap it around with curly bracket, i.e. <code>{...}</code></p>
+    <br />
+    <p><code>RenderBody</code> Will render anything the View contains outside of the @@section</p>
+    <p>This text you see here is render from the RenderBody section</p>
+    <br />
+</div>

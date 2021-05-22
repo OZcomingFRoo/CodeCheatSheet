@@ -5,6 +5,14 @@
     <Name>Angular</Name>
     <RootNamespace>Angular</RootNamespace>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <ScriptArguments>
+    </ScriptArguments>
+    <LaunchUrl>
+    </LaunchUrl>
+    <NodejsPort>
+    </NodejsPort>
+    <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
+    <JavaScriptTestRoot>.</JavaScriptTestRoot>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -22,7 +30,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <EnableTypeScript>true</EnableTypeScript>
-    <StartWebBrowser>False</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +50,10 @@
     <Content Include="README.md" />
     <Content Include="src\app\app-component\app.component.css" />
     <Content Include="src\app\app-component\app.component.html" />
+    <Content Include="src\app\components\form-model-driven\form-model-driven.component.css" />
+    <Content Include="src\app\components\form-model-driven\form-model-driven.component.html" />
+    <Content Include="src\app\components\form-template-driven\form-template-driven.component.css" />
+    <Content Include="src\app\components\form-template-driven\form-template-driven.component.html" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.css" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
     <Content Include="src\app\components\nav\nav.component.css" />
@@ -73,6 +85,8 @@
     <Folder Include="src\" />
     <Folder Include="src\app\" />
     <Folder Include="src\app\components\" />
+    <Folder Include="src\app\components\form-model-driven\" />
+    <Folder Include="src\app\components\form-template-driven\" />
     <Folder Include="src\app\components\how-to\" />
     <Folder Include="src\app\components\how-to\in-out-directive\" />
     <Folder Include="src\app\components\nav\" />
@@ -95,6 +109,10 @@
     <TypeScriptCompile Include="src\app\app-component\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app-component\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\components\form-model-driven\form-model-driven.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\form-model-driven\form-model-driven.component.ts" />
+    <TypeScriptCompile Include="src\app\components\form-template-driven\form-template-driven.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\form-template-driven\form-template-driven.component.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.spec.ts" />

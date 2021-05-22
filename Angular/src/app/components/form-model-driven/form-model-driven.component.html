@@ -1,0 +1,122 @@
+<main class="p-3 d-block w-100">
+  <h1 class="text-center">Model-Driven Form, AKA Reactive Form</h1>
+
+  <!-- The basics -->
+  <div class="mt-3 border p-4 mt-2 mb-2 d-block">
+    <h2>Using the Form-Control (The basics)</h2>
+    <!----------------------- Inputs ----------------------->
+    <div class="form-group w-70">
+      <label>First Name:</label>
+      <input type="text" class="form-control" [formControl]="firstName">
+      <!-- Using Built In Validators -->
+      <p [class.d-none]="! firstName.errors?.required" [ngClass]="{ 'text-danger d-block' : firstName.errors?.required}">Value Required</p>
+      <p [class.d-none]="! firstName.errors?.minlength" [ngClass]="{ 'text-danger d-block' : firstName.errors?.minlength}">
+        Buddy, no one has a 'latter' as his name, Unless you're Japanese or something
+      </p>
+      <!-- Using Custom Validator -->
+      <p [class.d-none]="! firstName.errors?.NoBob" [ngClass]="{ 'text-danger d-block' : firstName.errors?.NoBob}">
+        Lame name..... Bob... Really ?!??
+      </p>
+    </div>
+    <div class="form-group w-70">
+      <label>Last Name:</label>
+      <input type="text" class="form-control" [formControl]="lastName">
+      <!-- Using Built In Validators -->
+      <p [class.d-none]="! lastName.errors?.required" [ngClass]="{ 'text-danger d-block' : lastName.errors?.required}">Value Required</p>
+      <p [class.d-none]="! lastName.errors?.minlength" [ngClass]="{ 'text-danger d-block' : lastName.errors?.minlength}">
+        Buddy, no one has a 'latter' as his name, Unless you're Japanese or something
+      </p>
+      <!-- Using Custom Validator (Inline) -->
+      <p [class.d-none]="! lastName.errors?.NoBob" [ngClass]="{ 'text-danger d-block' : lastName.errors?.NoBob}">
+        Lame name..... Bob... Really ?!??
+      </p>
+    </div>
+    <!----------------------- Display ----------------------->
+    <h4>Full Name (Using the <code>Value</code> property):</h4>
+    <p><b>{{ FullName }}</b></p>
+    <h4>Full Name (Using <code>Observable</code> property <code>valueChanges</code>):</h4>
+    <p>Note! you won't see the values until any changed were done to the initial value in inputs.</p>
+    <p>Once you change, valueChanges will be activated and display the values</p>
+    <p><b>{{ firstName.valueChanges | async }} {{ lastName.valueChanges | async }}</b></p>
+  </div>
+
+  <!-- Using FormGroup -->
+  <div class="mt-3 border p-4 mt-2 mb-2 d-block">
+    <h2>Using Form-Group</h2>
+    <!-- FormGroup inputs -->
+    <form [formGroup]="myFormGroup" (ngSubmit)="submitGroup()">
+      <!-- CarName (text) -->
+      <div class="form-group w-50">
+        <label>Car Name:</label>
+        <input type="text" class="form-control" formControlName="carName">
+        <p [class.d-none]="myFormGroup.get('carName')?.valid" [class.text-danger]="myFormGroup.get('carName')?.errors?.required">Must provide car name</p>
+      </div>
+      <!-- Car Color (Select) -->
+      <div class="form-group w-40">
+        <label>Car Color:</label>
+        <select class="form-control" formControlName="color">
+          <option value="1">Red</option>
+          <option value="2">Blue</option>
+          <option value="3">Green</option>
+        </select>
+      </div>
+      <!-- Car manufactureDate (Date) -->
+      <div class="form-group w-40">
+        <label class="form-label">Manufacture Date:</label> <br />
+        <input type="date" formControlName="manufactureDate" />
+      </div>
+      <!-- Is 2nd Handed (checkbox) -->
+      <div class="form-group w-40">
+        <label class="form-label">Is 2nd handed:</label>
+        <input class="ml-2 is-2nd-handed-checkbox" type="checkbox" formControlName="is2ndHanded" />
+        <h5> {{ myFormGroup.value.is2ndHanded ? "Yes" : "No" }} </h5>
+      </div>
+      <div class="d-flex justify-content-center w-100">
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+      </div>
+    </form>
+    <!-- <!-- FormGroup value in JSON -->
+    <div class="m-3">
+      <h3>JSON value of form group</h3>
+      <code>
+        {{ myFormGroup.value | json }}
+      </code>
+    </div>
+  </div>
+
+  <!-- Using FormArray -->
+  <div class="mt-3 border p-4 mt-2 mb-2 d-block">
+    <form [formGroup]="myFormArrGroup" (ngSubmit)="submitArr()">
+      <h2>Using Form-Array (Languages are know)</h2>
+      <h3 class="text-danger">Note ! Please read this to avoid confusion</h3>
+      <p>To add FormArray, the Form array must:</p>
+      <ol class="list-group w-75 m-auto">
+        <li>Be inside a form group</li>
+        <li>
+          Must have a getter property that reference the Array.<br />
+          <b>THE GETTER PROP MUST HAVE THE SAME NAME AS THE KEY/PROP TO ACCESS THE FormArray INSIDE THE FormGroup</b>
+        </li>
+      </ol>
+      <div formArrayName="formArr">
+        <button class="btn-warning btn" (click)="addControlToArr()">Add</button>
+        <div class="w-100" *ngFor="let lang of formArr.controls; let i=index">
+          <label>
+            Language:
+            <input type="text" [formControlName]="i">
+            <button class="btn-danger btn" (click)="removeControlFromArr(i)">Remove</button>
+          </label>
+          <p [class.d-none]="! lang.errors?.required" [ngClass]="{ 'text-danger d-block' : lang.errors?.required}">Please Remove if it's empty or fill it</p>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        <!-- FormGroup value in JSON -->
+        <div class="m-3">
+          <h3>JSON value of form Array</h3>
+          <code>
+            {{ myFormArrGroup.value | json }}
+          </code>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+

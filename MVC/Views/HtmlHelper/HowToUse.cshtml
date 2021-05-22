@@ -1,0 +1,87 @@
+﻿@model HowToUseModel
+@*
+    ========================================================================================================
+    ============================================== HtmlHelper ==============================================
+    ========================================================================================================
+    This section will cover on how to use the HtmlHelper's functions.
+    It will show an extensive example list of how to create an element with MVC's classic way to add elements
+    In other words, this can also be achived in ASP.NET MVC 4 (Framework)
+*@
+
+@{
+    ViewData["Title"] = "How to use HtmlHelper";
+    List<Tuple<int, string>> dropdownListItems = new List<Tuple<int, string>>();
+    dropdownListItems.Add(new Tuple<int, string>(6, "Halo 3"));
+    dropdownListItems.Add(new Tuple<int, string>(8, "Gears of War 2"));
+    dropdownListItems.Add(new Tuple<int, string>(10, "Ratchet and Clank 4"));
+    dropdownListItems.Add(new Tuple<int, string>(11, "The Last of Us 1"));
+    dropdownListItems.Add(new Tuple<int, string>(73, "Melty Blood: Actress Again HD"));
+    dropdownListItems.Add(new Tuple<int, string>(222, "Tekken Tag Tournament 2"));
+}
+
+<h1 class="m-4 text-center">How to use HtmlHelper</h1>
+
+<ul class="w-100">
+    <li class="w-100">
+        <h2>Text Input</h2>
+        @Html.TextBoxFor(m => m.ObjectProp.Name, "The text is \"{0}\"", new { id = "My-textbox-Id", @class = "w-100" })
+    </li>
+    <li class="w-100">
+        <h2>Text Area</h2>
+        @Html.TextAreaFor(m => m.Sentence, 5, 3, new { id = "My-textboxArea-Id", @class = "w-100" })
+    </li>
+    <li class="w-100">
+        <h2>Checkbox</h2>
+        @Html.CheckBoxFor(m => m.Boolean, new { id = "My-Checkbox-Id", style = "transform: scale(2);" })
+    </li>
+    <li class="w-100">
+        <h2>Radio button</h2>
+        Male
+        @Html.RadioButtonFor(m => m.ObjectProp.Gender, "Male")
+        Female
+        @Html.RadioButtonFor(m => m.ObjectProp.Gender, "Female")
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (Just the Enum)</h2>
+        @Html.DropDownList("enum-name-and-id-value", Html.GetEnumSelectList(typeof(Gender)), new { @class = "w-25 text-warning" })
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (Enum for model)</h2>
+        @Html.DropDownListFor(m => m.ObjectProp.Gender, Html.GetEnumSelectList(typeof(Gender)), "Select Gender", new { @class = "w-50 text-primary" })
+    </li>
+    <li class="w-100">
+        <h2>DropdownList (From An IEnumerable object)</h2>
+        @Html.DropDownList("name-and-id-value", new SelectList(dropdownListItems, "Item1", "Item2", 73), new { @class = "w-75 text-danger" })
+    </li>
+    <li class="w-100">
+        <h2>Hidden field for the model</h2>
+        @Html.HiddenFor(m => m.DecimalNumber)
+    </li>
+    <li class="w-100">
+        <h2>Hidden field From User</h2>
+        @* Can be a local variable as well *@
+        @Html.Hidden("hidden-field", "Some random hidden value XD = " + (Model.Number * Model.AltDecimalNum))
+    </li>
+    <li class="w-100">
+        <h2>Using the display method </h2>
+        <p>Renders the name value of the <code>Display</code> Attribute</p>
+        @Html.DisplayNameFor(m => m.Sentence)
+    </li>
+    <li class="w-100">
+        <h2>What does DisplayModel do ?</h2>
+        <code>@Html.DisplayForModel()</code>
+        Seems Like it displays each value with it's optionally created label display.
+    </li>
+    <li class="w-100">
+        <h2>Using Editors</h2>
+        <p>Used for <i>Generate HTML input elements based on the datatype.</i></p>
+        <code>
+            @Html.EditorForModel()
+        </code>
+        <pre>
+            I used <code>EditorForModel</code> shortcut to generate all the Editors for any possible value.
+            Not all values were rendered properly which is why ASP.NET MVC gives options to render the inputs in multiple ways.
+        </pre>
+    </li>
+</ul>
+
