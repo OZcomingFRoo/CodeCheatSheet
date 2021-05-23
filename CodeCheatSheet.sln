@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppReadingAppSetting
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{3105E63D-C689-4C77-9EBB-20E49B4AC599}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CShaprtOOPConcepts", "CShaprtOOPConcepts\CShaprtOOPConcepts.csproj", "{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3105E63D-C689-4C77-9EBB-20E49B4AC599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3105E63D-C689-4C77-9EBB-20E49B4AC599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3105E63D-C689-4C77-9EBB-20E49B4AC599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
