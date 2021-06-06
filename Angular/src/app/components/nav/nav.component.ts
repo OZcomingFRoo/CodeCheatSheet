@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
   @Input() title = "Navigation Title";
   toggleHowToDropdown: boolean = false;
   GuardsDropdown: boolean = false;
-  PopupModelsDropdown: boolean = false;
+  UtilityCompsDropdown: boolean = false;
   showNativePopup = false;
   AngularFormsDropdown: boolean = false;
   constructor() { }
@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
   }
 
   clickShowNativePopup() {
-    this.PopupModelsDropdown = false;
+    this.UtilityCompsDropdown = false;
     this.showNativePopup = true;
   }
 

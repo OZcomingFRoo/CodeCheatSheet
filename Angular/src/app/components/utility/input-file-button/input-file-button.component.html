@@ -1,0 +1,4 @@
+<button type="button" [attr.class]="cssClasses" (click)="file.click()">
+  {{ buttonText }}
+  <input #file style="display:none;" hidden="hidden" type="file" [attr.accept]="acceptFileType" (change)="inputFileChange($event)" />
+</button>

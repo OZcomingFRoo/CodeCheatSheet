@@ -23,14 +23,15 @@
         <a class="dropdown-item" (click)="GuardsDropdown = false" [routerLink]="['NotAuth']">Un-Authorized Page</a>
       </div>
     </li>
-    <!-- How to use Dropdown -->
-    <li class="nav-item dropdown" [class.show]="PopupModelsDropdown">
-      <a class="nav-link dropdown-toggle" (click)="PopupModelsDropdown = !PopupModelsDropdown">
-        Popup Model Windows
+    <!-- Utilities -->
+    <li class="nav-item dropdown" [class.show]="UtilityCompsDropdown">
+      <a class="nav-link dropdown-toggle" (click)="UtilityCompsDropdown = !UtilityCompsDropdown">
+        Utilites
       </a>
-      <div class="dropdown-menu" [class.show]="PopupModelsDropdown">
+      <div class="dropdown-menu" [class.show]="UtilityCompsDropdown">
         <a class="dropdown-item" (click)="clickShowNativePopup()">Native popup model</a>
-        <a class="dropdown-item" (click)="PopupModelsDropdown = false">Bootsrap based popup model</a>
+        <a class="dropdown-item" (click)="UtilityCompsDropdown = false">Bootsrap based popup model</a>
+        <a class="dropdown-item" (click)="UtilityCompsDropdown = false" [routerLink]="['/InputFileButton']">Input File Button</a>
       </div>
     </li>
     <!-- How to use Forms -->
