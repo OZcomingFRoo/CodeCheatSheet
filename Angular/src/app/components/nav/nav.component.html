@@ -3,15 +3,8 @@
   <a class="navbar-brand" [routerLink]="['/Home']">{{title}}</a>
   <!-- Links -->
   <ul class="navbar-nav">
-    <!-- How to use Dropdown -->
-    <li class="nav-item dropdown" [class.show]="toggleHowToDropdown">
-      <a class="nav-link dropdown-toggle" (click)="toggleHowToDropdown = !toggleHowToDropdown">
-        How To Use
-      </a>
-      <div class="dropdown-menu" [class.show]="toggleHowToDropdown">
-        <a class="dropdown-item" (click)="toggleHowToDropdown = false" [routerLink]="['/HowTo/InputOutput']">Input-Output Directives</a>
-      </div>
-    </li>
+    <!-- "How to use" Dropdown -->
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/HowTo']">How to Use</a></li>
     <!-- Guards related -->
     <li class="nav-item dropdown" [class.show]="GuardsDropdown">
       <a class="nav-link dropdown-toggle" (click)="GuardsDropdown = !GuardsDropdown">

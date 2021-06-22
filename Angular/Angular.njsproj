@@ -54,8 +54,12 @@
     <Content Include="src\app\components\form-model-driven\form-model-driven.component.html" />
     <Content Include="src\app\components\form-template-driven\form-template-driven.component.css" />
     <Content Include="src\app\components\form-template-driven\form-template-driven.component.html" />
+    <Content Include="src\app\components\how-to\how-to.component.css" />
+    <Content Include="src\app\components\how-to\how-to.component.html" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.css" />
     <Content Include="src\app\components\how-to\in-out-directive\in-out-directive.component.html" />
+    <Content Include="src\app\components\how-to\use-element-ref\use-element-ref.component.css" />
+    <Content Include="src\app\components\how-to\use-element-ref\use-element-ref.component.html" />
     <Content Include="src\app\components\nav\nav.component.css" />
     <Content Include="src\app\components\nav\nav.component.html" />
     <Content Include="src\app\components\others\not-auth-page\not-auth-page.component.css" />
@@ -93,6 +97,7 @@
     <Folder Include="src\app\components\form-template-driven\" />
     <Folder Include="src\app\components\how-to\" />
     <Folder Include="src\app\components\how-to\in-out-directive\" />
+    <Folder Include="src\app\components\how-to\use-element-ref\" />
     <Folder Include="src\app\components\nav\" />
     <Folder Include="src\app\components\others\" />
     <Folder Include="src\app\components\others\not-auth-page\" />
@@ -120,8 +125,10 @@
     <TypeScriptCompile Include="src\app\components\form-model-driven\form-model-driven.component.ts" />
     <TypeScriptCompile Include="src\app\components\form-template-driven\form-template-driven.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\form-template-driven\form-template-driven.component.ts" />
+    <TypeScriptCompile Include="src\app\components\how-to\how-to.component.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\how-to\in-out-directive\in-out-directive.component.ts" />
+    <TypeScriptCompile Include="src\app\components\how-to\use-element-ref\use-element-ref.component.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.spec.ts" />
     <TypeScriptCompile Include="src\app\components\nav\nav.component.ts" />
     <TypeScriptCompile Include="src\app\components\others\not-auth-page\not-auth-page.component.ts" />
