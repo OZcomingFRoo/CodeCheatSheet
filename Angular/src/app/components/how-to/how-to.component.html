@@ -1,1 +1,31 @@
-<p>how-to works!</p>
+<header class="d-block w-100">
+  <h1 class="text-center m-5"><u>How to Use</u></h1>
+</header>
+<main class="d-block w-100 mb-4">
+
+  <div class="mr-5 ml-5 w-50">
+    <div class="form-group ">
+      <label><b>@Input</b> value to inject into child component "app-in-out-directive":</label>
+      <input type="text" class="form-control" [(ngModel)]="parentInput">
+    </div>
+  </div>
+  <div class="mr-5 ml-5 w-50">
+    <div class="form-group ">
+      <label>Child's <b>@Output</b> : [ {{ childOutput }} ]</label>
+    </div>
+  </div>
+  <div class="mr-5 ml-5 w-50">
+    <div class="form-group ">
+      <label>Value set by <b>both</b> : [ {{ parentIOput }} ]</label>
+      <br />
+      <label><b>NgModel Like @Input/@Output</b> value :</label>
+      <input type="text" class="form-control" [(ngModel)]="parentIOput">
+    </div>
+  </div>
+  <app-in-out-directive [myInput]="parentInput" (myOutput)="childOutput = $event"
+                        [(IOput)]="parentIOput"></app-in-out-directive>
+
+  <div class="w-100 d-block mt-3 mb-3">&nbsp; <hr /> &nbsp; </div>
+  <app-use-element-ref></app-use-element-ref>
+  <div class="w-100 d-block mt-3 mb-3">&nbsp; <hr /> &nbsp; </div>
+</main>

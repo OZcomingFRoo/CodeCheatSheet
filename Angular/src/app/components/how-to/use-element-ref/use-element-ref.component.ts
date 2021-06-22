@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UseElementRefComponent implements OnInit {
 
+  title = "How to use ElementRef";
   constructor() { }
 
   ngOnInit(): void {

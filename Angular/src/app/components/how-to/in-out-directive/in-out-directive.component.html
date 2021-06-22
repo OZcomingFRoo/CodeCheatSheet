@@ -1,5 +1,33 @@
-<main class="d-block w-100 mt-5">
-  <h1 class="text-center">{{ title }}</h1>
+<h2 class="text-center m-a w-100">{{ title }}</h2>
 
-</main>
+<div class="w-95 d-flex flex-wrap justify-content-around p-3">
+  <!-- One-way binding -->
+  <h3 class="w-100 text-center mt-3 mb-4">One-Way bind</h3>
+  <!-- Input Directive -->
+  <div class="w-40 border p-2" style="height: 250px">
+    <h4 class="text-center">Input (From Parent to Child)</h4>
+    <div class="text-center m-a">Use the input field (From Parent) to set this: [ {{ myInput }} ]</div>
+  </div>
+  <!-- Output Directive -->
+  <div class="w-40 border p-2" style="height: 250px">
+    <h4 class="text-center">Output (From Parent to Child)</h4>
+    <div class="text-center m-a">
+      Insert any value and see the parent's value changing:
+      <input [(ngModel)]="myOutputVal" (input)="myOutput.emit(myOutputVal)" />
+    </div>
+  </div>
+  <!-- Two-way binding -->
+  <h3 class="w-100 text-center mt-5 mb-4">Two-Way bind</h3>
+  <!-- Input Directive -->
+  <div class="w-40 border p-2" style="height: 250px">
+    <h4 class="text-center w-100">Input/Output</h4>
+    <div class="text-center m-a">
+      You can set value here as well:<br />
+      [ {{ IOput }} ]<br />
+      <input [(ngModel)]="IOput" (input)="IOputChange.emit(IOput)" />
+    </div>
+  </div>
+</div>
+
+
 
