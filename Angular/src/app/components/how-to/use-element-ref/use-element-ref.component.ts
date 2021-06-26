@@ -12,8 +12,8 @@ export class UseElementRefComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-    // This won't work ! but at least no error will be thrown
-    this.divRef.nativeElement.textContent = "Div was set in NgOnInit";
+    // This won't work !
+    //this.divRef.nativeElement.textContent = "Div was set in NgOnInit";
   }
   ngAfterViewInit() {
     // Only from this life-cycle you'll be able to access it

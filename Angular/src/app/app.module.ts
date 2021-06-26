@@ -16,6 +16,8 @@ import { FormTemplateDrivenComponent } from './components/form-template-driven/f
 import { InputFileButtonComponent } from './components/utility/input-file-button/input-file-button.component';
 import { UseElementRefComponent } from './components/how-to/use-element-ref/use-element-ref.component';
 import { HowToComponent } from './components/how-to/how-to.component';
+import { HostListenerComponent } from './components/how-to/host-listener/host-listener.component';
+import { HowToHrComponent } from './components/how-to/how-to-hr/how-to-hr.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { HowToComponent } from './components/how-to/how-to.component';
     InputFileButtonComponent,
     InputFileBtnPageComponent,
     UseElementRefComponent,
-    HowToComponent
+    HowToComponent,
+    HostListenerComponent,
+    HowToHrComponent
   ],
   imports: [
     BrowserModule,
