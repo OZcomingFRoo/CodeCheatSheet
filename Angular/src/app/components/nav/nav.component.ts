@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   @Input() title = "Navigation Title";
-  toggleHowToDropdown: boolean = false;
   GuardsDropdown: boolean = false;
   UtilityCompsDropdown: boolean = false;
   showNativePopup = false;

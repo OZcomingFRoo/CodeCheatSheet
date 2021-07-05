@@ -1,0 +1,22 @@
+<h2 class="text-center m-a w-100">{{ title }}</h2>
+<section class="d-flex flex-wrap justify-content-around">
+  <div class="w-100 text-center" #divRef></div>
+  <pre>
+  <b><u>What it does?</u></b>
+    It's a direct access to any DOM element via using a Class&lt;T&gt; named "ElementRef"
+
+  <b><u>Why and when not to use angular elementRef?</u></b>
+    The ElementRef object gives us direct access to the DOM element.
+    It is not recommended not to use elementRef to modify DOM and it makes your application more vulnerable to XSS attack.
+    Use ElementRef API for the last option when you need to access DOM directly.
+    If we used ElementRef class only to get DOM element information, like getting the width of a DOM element, there is no security risk involved at all and we can use it.
+    There is a risk that can involve when you try to modify the DOM element using an ElementRef.
+
+  <b><u>How to prevent XSS attack on ElementRef</u></b>
+    The best way to prevent XSS attacks is to prevent untrusted data (malicious code) from getting injected into the DOM tree.
+    Angular have DomSanitizer class, which helps to prevent Cross-Site Scripting Security bugs (XSS) by sanitizing values to be safe to use in the different DOM contexts.
+    Angular DOMSanitizer class has lots of methods that we can use, e.g. <code class="text-danger">bypassSecurityTrustHtml</code>.
+    So we have used and applied DomSanitizer class on our previous elementRef on angular directives.
+  </pre>
+  <a class="w-100 text-center" style="font-size:1.5em" href="https://edupala.com/what-is-angular-elementref-example/">Source Used</a>
+</section>

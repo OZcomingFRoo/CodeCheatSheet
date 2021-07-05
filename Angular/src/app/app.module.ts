@@ -14,6 +14,10 @@ import { InputFileBtnPageComponent } from './components/others/input-file-btn-pa
 import { FormModelDrivenComponent } from './components/form-model-driven/form-model-driven.component';
 import { FormTemplateDrivenComponent } from './components/form-template-driven/form-template-driven.component';
 import { InputFileButtonComponent } from './components/utility/input-file-button/input-file-button.component';
+import { UseElementRefComponent } from './components/how-to/use-element-ref/use-element-ref.component';
+import { HowToComponent } from './components/how-to/how-to.component';
+import { HostListenerComponent } from './components/how-to/host-listener/host-listener.component';
+import { HowToHrComponent } from './components/how-to/how-to-hr/how-to-hr.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { InputFileButtonComponent } from './components/utility/input-file-button
     FormModelDrivenComponent,
     FormTemplateDrivenComponent,
     InputFileButtonComponent,
-    InputFileBtnPageComponent
+    InputFileBtnPageComponent,
+    UseElementRefComponent,
+    HowToComponent,
+    HostListenerComponent,
+    HowToHrComponent
   ],
   imports: [
     BrowserModule,
