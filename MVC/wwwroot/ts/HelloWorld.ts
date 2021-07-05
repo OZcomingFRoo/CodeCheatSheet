@@ -1,0 +1,1 @@
+﻿alert("Hello! You can see this from a Typescript file");

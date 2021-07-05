@@ -6,7 +6,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\ts\HelloWorld.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.12" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\HelloWorld.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DI_ServicesExamples\" />
   </ItemGroup>
 
 </Project>
