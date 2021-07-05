@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\ts\HelloWorld.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="DI_ServicesExamples\" />
   </ItemGroup>
 

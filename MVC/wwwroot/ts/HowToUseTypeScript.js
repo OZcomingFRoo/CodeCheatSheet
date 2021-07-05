@@ -3,4 +3,4 @@ $(function () {
     alert("If you see this message, this means the jQuery library can be used in TS files in this project");
     $("#markForGreen").css("color", "greenyellow");
 });
-//# sourceMappingURL=HelloWorld.js.map
+//# sourceMappingURL=HowToUseTypeScript.js.map
