@@ -3,7 +3,8 @@
 *@
 
 @{
-
+    string linkToMicrosoftGuide = "https://docs.microsoft.com/en-us/visualstudio/javascript/tutorial-aspnet-with-typescript?view=vs-2019";
+    string linkTo_AddjQueryToMVC_Framework = "https://www.c-sharpcorner.com/article/typescript-with-jquery/";
 }
 
 <h1 class="text-center w-100">Using a Typescript files in MVC</h1>
@@ -12,8 +13,19 @@
     <span>To use Typescipt in ASP.NET MVC, you need to: </span>
     <code>Install the 'Microsoft.Typescript.MSBuild' <b>Nuget Package</b></code>
 </section>
+<section class="d-block w-50 m-auto">
+    <h2>Useful sources to learn from</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="@linkToMicrosoftGuide">Guide from Microsoft on how to use Typescipt in ASP.NET MVC <b><u>Core</u></b></a>
+        </li>
+        <li class="list-group-item">
+            <a href="@linkTo_AddjQueryToMVC_Framework">Add jQuery To ASP.NET MVC <b><u>(.NET Framework)</u></b></a>
+        </li>
+    </ul>
+</section>
 
-@section Scripts{ 
+@section Scripts{
     <script src="~/ts/HelloWorld.js" asp-append-version="true"></script>
 }
 
