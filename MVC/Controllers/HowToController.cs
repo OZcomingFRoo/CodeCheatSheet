@@ -18,7 +18,7 @@ namespace MVC.Controllers
             return View();
         }
 
-        public IActionResult jQueryPromise()
+        public IActionResult UsejQueryPromise()
         {
             return View();
         }
