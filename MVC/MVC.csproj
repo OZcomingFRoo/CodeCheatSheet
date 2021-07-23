@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DI_ServicesExamples\**" />
+    <Content Remove="DI_ServicesExamples\**" />
+    <EmbeddedResource Remove="DI_ServicesExamples\**" />
+    <None Remove="DI_ServicesExamples\**" />
+    <TypeScriptCompile Remove="DI_ServicesExamples\**" />
     <TypeScriptCompile Remove="node_modules\**" />
   </ItemGroup>
 
@@ -23,10 +28,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DI_ServicesExamples\" />
   </ItemGroup>
 
 </Project>

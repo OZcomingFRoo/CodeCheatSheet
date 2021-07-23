@@ -10,11 +10,12 @@ namespace MVC.Controllers
     {
         public HowToController()
         {
-
+            
         }
 
         public IActionResult UseTypeScript()
         {
+            
             return View();
         }
 
