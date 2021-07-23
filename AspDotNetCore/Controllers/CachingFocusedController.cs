@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace AspDotNetCore.Controllers
 {
@@ -22,6 +23,13 @@ namespace AspDotNetCore.Controllers
             _distributedCache = distributedCache;
         }
 
+        /// <summary>
+        /// Memory Cache is using the applications memory to store values for caching.
+        /// This is useful when you have 1 server up and running the application, for most occasions.
+        /// When you a service (aka Redis) that is used for caching, or a Database, 
+        /// you would most likely wanna use that (via "Distributed Cache") over the simplistic memory caching.
+        /// </summary>
+        #region Memory Caching example
         private const string BASIC_MEMORY_CACHING_EXAMPLE_KEY = "CachingFocusedController-BasicMemoryCachingExample";
         [HttpPost]
         public IActionResult BasicMemoryCachingExample([FromQuery] string value)
@@ -60,5 +68,55 @@ namespace AspDotNetCore.Controllers
             }
             else return NotFound("The caching either timed out or not set at all");
         }
+        #endregion
+
+        /// <summary>
+        /// This should be used when you have more than one server up and running that serves the application, AKA, Load balancer.
+        /// Caching data is saved outside of the application, thus carry their own advantages:
+        /// - Is coherent (consistent) across requests to multiple servers.
+        /// - Survives server restarts and app deployments.
+        /// - Doesn't use local memory.
+        /// </summary>
+        #region Distributed Caching example
+        private const string BASIC_DISTRIBUTED_CACHING_EXAMPLE_KEY = "CachingFocusedController-BasicDistributedCachingExample";
+        [HttpPost]
+        public async Task<IActionResult> BasicDistributedCachingExample([FromQuery] string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return BadRequest("You must supply a value");
+            }
+            else
+            {
+                byte[] valueByteArr = Encoding.UTF8.GetBytes(value);
+                await _distributedCache.SetAsync(BASIC_MEMORY_CACHING_EXAMPLE_KEY, valueByteArr, new DistributedCacheEntryOptions
+                {
+                    SlidingExpiration = TimeSpan.FromSeconds(20)
+                });
+                return StatusCode((int)HttpStatusCode.Accepted, "Value cached for 20 seconds (SlidingExpiration)");
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> BasicDistributedCachingExample()
+        {
+            string cachedStringValue = await _distributedCache.GetStringAsync(BASIC_MEMORY_CACHING_EXAMPLE_KEY);
+            bool found = string.IsNullOrWhiteSpace(cachedStringValue) == false;
+            if (found) return Ok("Here's the cache value : " + cachedStringValue);
+            else return NotFound("The caching either timed out, deleted or not set at all");
+        }
+        [HttpDelete]
+        [Route("/api/[controller]/BasicDistributedCachingExample")]
+        public async Task<IActionResult> DeleteDistributedMemoryCachingExample()
+        {
+            string cachedStringValue = await _distributedCache.GetStringAsync(BASIC_MEMORY_CACHING_EXAMPLE_KEY);
+            bool found = string.IsNullOrWhiteSpace(cachedStringValue) == false;
+            if (found)
+            {
+                await _distributedCache.RemoveAsync(BASIC_MEMORY_CACHING_EXAMPLE_KEY);
+                return Ok("Delete the cached value : " + cachedStringValue);
+            }
+            else return NotFound("The caching either timed out or not set at all");
+        }
+        #endregion
     }
 }
