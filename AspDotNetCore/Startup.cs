@@ -28,6 +28,10 @@ namespace AspDotNetCore
             services.AddControllers();
             services.AddMemoryCache();
             services.AddDistributedMemoryCache();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+                options.Cookie.Name = "Ookami-Cookie-Session";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +43,8 @@ namespace AspDotNetCore
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSession();
 
             app.UseRouting();
             

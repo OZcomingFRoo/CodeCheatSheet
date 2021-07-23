@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Text;
+using AspDotNetCore.Pocos;
 
 namespace AspDotNetCore.Controllers
 {
@@ -118,5 +119,26 @@ namespace AspDotNetCore.Controllers
             else return NotFound("The caching either timed out or not set at all");
         }
         #endregion
+
+        /// <summary>
+        /// This is NOT the session Id !
+        /// </summary>
+        private const string SESSION_KEY_VALUE = "session_key_value";
+        [HttpPost]
+        public IActionResult AddSessionVal([FromQuery] string value)
+        {
+            if (string.IsNullOrWhiteSpace(SESSION_KEY_VALUE) || string.IsNullOrWhiteSpace(value)) return BadRequest("Set query key & value");
+            HttpContext.Session.SetString(SESSION_KEY_VALUE, value);
+            return Ok("Save in session");
+        }
+        [HttpGet]
+        public IActionResult GetSessionData()
+        {
+            var value = HttpContext.Session.GetString(SESSION_KEY_VALUE);
+            bool found = string.IsNullOrWhiteSpace(value) == false;
+            if (found) return Ok(value);
+            else return NotFound("Session cookie is not valid or value was not posted");
+        }
+
     }
 }
