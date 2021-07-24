@@ -32,6 +32,7 @@ namespace AspDotNetCore
                 options.IdleTimeout = TimeSpan.FromMinutes(1);
                 options.Cookie.Name = "Ookami-Cookie-Session";
             });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +48,11 @@ namespace AspDotNetCore
             app.UseSession();
 
             app.UseRouting();
-            
+
+            app.UseCors(pol => {
+                pol.AllowAnyOrigin();  
+            });
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

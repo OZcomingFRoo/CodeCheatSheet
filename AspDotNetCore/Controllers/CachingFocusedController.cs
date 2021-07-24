@@ -127,7 +127,7 @@ namespace AspDotNetCore.Controllers
         [HttpPost]
         public IActionResult AddSessionVal([FromQuery] string value)
         {
-            if (string.IsNullOrWhiteSpace(SESSION_KEY_VALUE) || string.IsNullOrWhiteSpace(value)) return BadRequest("Set query key & value");
+            if (string.IsNullOrWhiteSpace(value)) return BadRequest("Set query key & value");
             HttpContext.Session.SetString(SESSION_KEY_VALUE, value);
             return Ok("Save in session");
         }
@@ -139,6 +139,17 @@ namespace AspDotNetCore.Controllers
             if (found) return Ok(value);
             else return NotFound("Session cookie is not valid or value was not posted");
         }
-
+        [HttpGet, Route("/SessionExamplePage")]
+        public async Task<IActionResult> SessionExamplePage()
+        {
+            var dir = System.IO.Directory.GetCurrentDirectory();
+            string htmlPage = await System.IO.
+                File.ReadAllTextAsync(System.IO.Path.Combine(dir, "SessionExamplePage", "Index.html"));
+            return new ContentResult
+            {
+                ContentType = "text/html",
+                Content = htmlPage
+            };
+        }
     }
 }

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Using Session in ASP.NET Core</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 style="text-align:center;"><b><u>Using Session in ASP.NET Core</u></b></h1>
+    <main style="display:flex; justify-content:center; flex-direction:column;">
+        <label>Cookie session</label>
+        <input id="session_id_cookie" />
+        <br />
+        <button style="width:50%;" id="set_session_cookie">Set Session Cookie</button>
+        <br />
+        <button style="width:50%;" id="session_get">Get Session</button>
+        <br />
+        <hr />
+        <label>Text area</label>
+        <textarea rows="10" cols="10" id="session_val_to_set"></textarea>
+        <br />
+        <button style="width:50%;" id="session_set">Set Session Session</button>
+    </main>
+    <script>
+        var ookamiCookie = "";
+        $(() => {
+            const baseUrl = "https://localhost:44320/api/CachingFocused/";
+            console.log("ready");
+
+            $("#set_session_cookie").click(() => {
+                console.log("Set cookie data");
+                const ookamiCookie = $("#session_id_cookie").val();
+                document.cookie = ookamiCookie;
+            });
+
+
+            $("#session_get").click(() => {
+                console.log("Getting session data");
+                $.get(baseUrl + "GetSessionData")
+                    .done((res, status, ajx) => { console.log("Done", res); })
+                    .fail((res, status, ajx) => { console.log("Fail", res); })
+            });
+
+            $("#session_set").click(() => {
+                console.log("Setting session data");
+                const val = $("#session_val_to_set").val();
+                $.post(baseUrl + "AddSessionVal?value=" + val)
+                    .done((res, status, ajx) => {
+                        console.log("Done", res);
+                    })
+                    .fail((res, status, ajx) => { console.log("Fail", res, status); })
+            });
+        });
+    </script>
+</body>
+</html>
+
