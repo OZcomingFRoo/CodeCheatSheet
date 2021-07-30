@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CShaprtOOPConcepts", "CShaprtOOPConcepts\CShaprtOOPConcepts.csproj", "{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetFramework", "AspDotNetFramework\AspDotNetFramework.csproj", "{BD726895-E090-46B3-AE5B-96E74A554F69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A4B7B6F-9082-41CA-90A8-FE2DD43EED8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD726895-E090-46B3-AE5B-96E74A554F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD726895-E090-46B3-AE5B-96E74A554F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD726895-E090-46B3-AE5B-96E74A554F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD726895-E090-46B3-AE5B-96E74A554F69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
