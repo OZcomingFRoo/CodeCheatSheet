@@ -10,27 +10,17 @@ using System.Web.Http;
 namespace AspDotNetFramework.Controllers
 {
     /// <summary>
-    /// Copy and paste from ASP.NET Core project
+    /// Copy and paste from ASP.NET Core project.
+    /// With a little bit of edit
     /// </summary>
     public class RouteFocuedController : ApiController
     {
-        private readonly HttpApplicationState applicationState;
-
-        public RouteFocuedController()
-        {
-            this.applicationState = HttpContext.Current.Application;
-        }
 
         [HttpGet]
         public IHttpActionResult IamAnAction()
         {
-            int s = applicationState.Count;
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("The route set on this Action was defined by the keywords:");
-            sb.AppendLine("[controller] and [action]");
-            sb.AppendLine("[controller] = \"RouteFocusedController\"");
-            sb.AppendLine("[action] = \"IamAnAction\"");
-            sb.AppendLine("Changing the name of either the controller or action will change the action URL");
+            sb.AppendLine("The route was set by the default value (set by the Web API Route Config)");
             return Ok(sb.ToString());
         }
 
@@ -48,15 +38,8 @@ namespace AspDotNetFramework.Controllers
         public IHttpActionResult RouteByGetAttr()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("This Route was created by using the [HttpGet] Attribute");
-            sb.AppendLine("One Parameter was defined in. Here's the C-tor description for it");
-            sb.AppendLine("// Summary:");
-            sb.AppendLine("//   Creates a new Microsoft.AspNetCore.Mvc.HttpGetAttribute with the given route");
-            sb.AppendLine("//   template.");
-            sb.AppendLine("//");
-            sb.AppendLine("// Parameters:");
-            sb.AppendLine("//   template: The route template. May not be null.");
-            sb.AppendLine("public HttpGetAttribute(string template);");
+            sb.AppendLine("This Route was created by using the [Route] Attribute");
+            sb.AppendLine("In ASP.NET Framework, you cannot define the route the in Http Method Attribute");
             return Ok(sb.ToString());
         }
 
@@ -64,9 +47,9 @@ namespace AspDotNetFramework.Controllers
         public IHttpActionResult RouteByPostAttr()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("This Route was created by using the [HttpPost] Attribute");
-            sb.AppendLine("The route was created the same way as the HttpGet Attribute");
-            sb.AppendLine("This means... that all Http methods have this C-tor feature");
+            sb.AppendLine("This Route was created by using the [Route] Attribute");
+            sb.AppendLine("This Route was NOT created by using the [HttpPost] Attribute");
+            sb.AppendLine("In ASP.NET Framework, you cannot define the route the in Http Method Attribute");
             return Ok(sb.ToString());
         }
 
@@ -74,8 +57,7 @@ namespace AspDotNetFramework.Controllers
         public IHttpActionResult RouteByHeadAttr()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("This Route was created by using the [HttpPut] Attribute");
-            sb.AppendLine("Yup, this settles it, all Http method Attributes have this c-tor feature");
+            sb.AppendLine("You called this endpoint via Put Method");
             return Ok(sb.ToString());
         }
 
