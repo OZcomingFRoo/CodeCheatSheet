@@ -22,6 +22,7 @@ namespace AspDotNetFramework.Controllers
             _session = HttpContext.Current.Session;
         }
 
+        #region Application state endpoints
         [HttpGet, Route("Cache/App/Add")]
         public IHttpActionResult AddValueToApplicationStage([FromUri] string val)
         {
@@ -46,8 +47,10 @@ namespace AspDotNetFramework.Controllers
                 dict.Add(key, _applicationState[key].ToString());
             }
             return Ok(dict);
-        }
+        } 
+        #endregion
 
+        #region Session endpoints ()
         [HttpGet, Route("Cache/Session/Add")]
         public IHttpActionResult AddValueToSessionStage([FromUri] string val)
         {
@@ -74,6 +77,8 @@ namespace AspDotNetFramework.Controllers
             return Ok(dict);
         }
         //To add session,
-        //visit this: https://stackoverflow.com/questions/9594229/accessing-session-using-asp-net-web-api
+        //visit this: https://stackoverflow.com/q/9594229
+        // The solution from that link: https://stackoverflow.com/a/17539008/16052696 
+        #endregion
     }
 }
