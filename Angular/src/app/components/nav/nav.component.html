@@ -37,6 +37,17 @@
         <a class="dropdown-item" (click)="AngularFormsDropdown = false" [routerLink]="['TemplateDrivenForm']">Template-Driven Form</a>
       </div>
     </li>
+    <!-- Pages -->
+    <li class="nav-item dropdown" [class.show]="OthersDropdown">
+      <a class="nav-link dropdown-toggle" (click)="OthersDropdown = !OthersDropdown ">
+        Others
+      </a>
+      <div class="dropdown-menu" [class.show]="OthersDropdown ">
+        <a class="dropdown-item" (click)="OthersDropdown = false" [routerLink]="['HowTo/Route']">How to route</a>
+        <a class="dropdown-item" (click)="OthersDropdown = false" [routerLink]="['Page1']">Page 1</a>
+        <a class="dropdown-item" (click)="OthersDropdown = false" [routerLink]="['Page2']">Page 2</a>
+      </div>
+    </li>
   </ul>
 </nav>
 <!-- Native popup model -->

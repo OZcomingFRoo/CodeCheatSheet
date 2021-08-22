@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">
+        How to route
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <p class="p-5">
+        This section can be used for routing testing and much more
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center">
+      <a [routerLink]="['/Page1']" class="btn btn-primary w-60">Go to Page 1 via link</a>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <button (click)="goToPage2()" class="btn btn-primary w-60">Go to Page 2 via code</button>
+    </div>
+  </div>
+</div>

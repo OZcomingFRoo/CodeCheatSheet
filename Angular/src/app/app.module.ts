@@ -18,6 +18,9 @@ import { UseElementRefComponent } from './components/how-to/use-element-ref/use-
 import { HowToComponent } from './components/how-to/how-to.component';
 import { HostListenerComponent } from './components/how-to/host-listener/host-listener.component';
 import { HowToHrComponent } from './components/how-to/how-to-hr/how-to-hr.component';
+import { SimplePage1Component } from './components/others/simple-page1/simple-page1.component';
+import { SimplePage2Component } from './components/others/simple-page2/simple-page2.component';
+import { RoutingComponent } from './components/how-to/routing/routing.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { HowToHrComponent } from './components/how-to/how-to-hr/how-to-hr.compon
     UseElementRefComponent,
     HowToComponent,
     HostListenerComponent,
-    HowToHrComponent
+    HowToHrComponent,
+    SimplePage1Component,
+    SimplePage2Component,
+    RoutingComponent
   ],
   imports: [
     BrowserModule,
