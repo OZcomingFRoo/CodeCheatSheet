@@ -8,13 +8,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SimplePage1Component implements OnInit {
 
-  constructor(private _router: Router) { }
+  routedFrom: string = "";
+
+  constructor(private _router: Router, private _activcatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    debugger;
+    const params = this._activcatedRoute.snapshot.queryParamMap;
+    this.routedFrom = params.get("routedFrom") ?? "N/A";
   }
 
   goToPage2(): void {
-    this._router.navigate(['/Page2'])
+    this._router.navigate(['/Page2'], { queryParams: { routedFrom : "Page 1 XD" } })
   }
 
 }

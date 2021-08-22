@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-simple-page2',
@@ -8,13 +8,18 @@ import { Router } from '@angular/router';
 })
 export class SimplePage2Component implements OnInit {
 
-  constructor(private _router: Router) { }
+  routedFrom: string = "";
+
+  constructor(private _router: Router, private _activcatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    debugger;
+    const params = this._activcatedRoute.snapshot.queryParamMap;
+    this.routedFrom = params.get("routedFrom") ?? "N/A";
   }
 
   goToPage1(): void {
-    this._router.navigate(['/Page1'])
+    this._router.navigate(['/Page1'], { queryParams: { routedFrom: "Page 2 XD" } })
   }
 
 }
