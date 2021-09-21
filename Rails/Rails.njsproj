@@ -11,7 +11,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>899c12f4-0325-45a9-aaee-efec27bd16ca</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -28,9 +29,32 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.js" />
+    <Content Include=".browserslistrc" />
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".ruby-version" />
+    <Content Include="babel.config.js" />
+    <Content Include="config.ru" />
+    <Content Include="Gemfile" />
+    <Content Include="Gemfile.lock" />
     <Content Include="package.json" />
+    <Content Include="postcss.config.js" />
+    <Content Include="Rakefile" />
     <Content Include="README.md" />
+    <Content Include="yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="bin\" />
+    <Folder Include="config\" />
+    <Folder Include="db\" />
+    <Folder Include="lib\" />
+    <Folder Include="log\" />
+    <Folder Include="public\" />
+    <Folder Include="storage\" />
+    <Folder Include="test\" />
+    <Folder Include="tmp\" />
+    <Folder Include="vendor\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
 </Project>
