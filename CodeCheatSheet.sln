@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CShaprtOOPConcepts", "CShap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetFramework", "AspDotNetFramework\AspDotNetFramework.csproj", "{BD726895-E090-46B3-AE5B-96E74A554F69}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Rails", "Rails\Rails.njsproj", "{899C12F4-0325-45A9-AAEE-EFEC27BD16CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BD726895-E090-46B3-AE5B-96E74A554F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD726895-E090-46B3-AE5B-96E74A554F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD726895-E090-46B3-AE5B-96E74A554F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899C12F4-0325-45A9-AAEE-EFEC27BD16CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899C12F4-0325-45A9-AAEE-EFEC27BD16CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899C12F4-0325-45A9-AAEE-EFEC27BD16CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899C12F4-0325-45A9-AAEE-EFEC27BD16CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
